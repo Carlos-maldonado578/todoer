@@ -17,6 +17,10 @@ def create_app():
     
     db.init_app(app)
     
+    from . import auth
+    
+    app.register.blueprint(auth.bp)
+    
     @app.route('/hola')
     def hola():
         return 'chanchito feliz'
